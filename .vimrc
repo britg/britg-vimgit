@@ -103,7 +103,7 @@ if has("gui_running")
   " set transp=8
   set lines=75
   set columns=300
-  set autochdir
+  "set autochdir
 endif
 " colo evening
 
@@ -122,18 +122,28 @@ set ts=2
 set sw=2
 set et
 
-" colorscheme koehler
+ " colorscheme koehler
+ colorscheme twilight
 
 " set guifont=Monaco:h10
 set guifont=Inconsolata:h14
 set guioptions=egmrLt
 set enc=utf-8
-hi LineNr guifg=#333333
+hi LineNr guifg=#cccccc
 
-au BufRead *.ctp set filetype=php
+au BufRead,BufNewFile *.ctp set filetype=php
+"au BufRead,BufNewFile *.js set autoindent
 
 set nofen
 
 set cursorline
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
+
+map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
+",V (CAPITAL V) reloads vimrc
+map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+"map <leader>t :FuzzyFinderFile<CR>
+nnoremap <leader>f :FuzzyFinderFile <C-r>=fnamemodify(getcwd(), ':p')<CR><CR> 
+map <leader>b :FuzzyFinderBuffer<CR>
+map <leader>t :Tlist<CR>
