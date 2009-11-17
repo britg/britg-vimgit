@@ -100,12 +100,15 @@ set number
 set go-=T
 " set bg=dark
 if has("gui_running")
-  " set transp=8
+  set transp=0
   set lines=75
   set columns=300
   "set autochdir
 endif
+
+" colorscheme koehler
 " colo evening
+colorscheme twilight
 
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 let Tlist_Use_Right_Window=1
@@ -116,17 +119,15 @@ let Tlist_Exit_OnlyWindow=1
 let Tlist_Close_On_Select=1
 let Tlist_GainFocus_On_ToggleOpen=1
 set updatetime=1000
-let VCSCommandSVNExec='/opt/local/bin/svn'
 
+" Tabs
 set ts=2
 set sw=2
 set et
 
- " colorscheme koehler
- colorscheme twilight
 
 " set guifont=Monaco:h10
-set guifont=Inconsolata:h14
+set guifont=Monaco:h12
 set guioptions=egmrLt
 set enc=utf-8
 hi LineNr guifg=#cccccc
@@ -143,7 +144,10 @@ au WinLeave * setlocal nocursorline
 map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
 ",V (CAPITAL V) reloads vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
 "map <leader>t :FuzzyFinderFile<CR>
 nnoremap <leader>f :FuzzyFinderFile <C-r>=fnamemodify(getcwd(), ':p')<CR><CR> 
 map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>t :Tlist<CR>
+map <leader>w :set lines=101<CR>:set columns=362<CR>
+map <leader>W :set lines=75<CR>:set columns=300<CR>
