@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/opt/local'
+let g:netrw_dirhist_2='/Users/britg/Projects/em-mongodb/lib/em'
+let g:netrw_dirhist_3='/Users/britg/Projects/photowall/app/controllers'
+let g:netrw_dirhist_4='/Users/britg'
+let g:netrw_dirhist_5='/Users/britg/src/restful_authentication'
+let g:netrw_dirhist_6='/Users/britg/Projects/scriptstack/views'
+let g:netrw_dirhist_7='/opt/nginx/conf'

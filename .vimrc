@@ -100,15 +100,22 @@ set number
 set go-=T
 " set bg=dark
 if has("gui_running")
-  set transp=0
-  set lines=75
-  set columns=300
-  "set autochdir
+  set lines=50
+  set columns=160
+  set autochdir
 endif
 
-" colorscheme koehler
-" colo evening
-colorscheme twilight
+set background=dark
+"colo koehler
+"colo evening
+"colo twilight
+"colo pyte
+"colo desert 
+colo moria
+"colo molokai 
+"colo darkburn 
+"colo darkZ
+
 
 let Tlist_Ctags_Cmd='/opt/local/bin/ctags'
 let Tlist_Use_Right_Window=1
@@ -125,15 +132,14 @@ set ts=2
 set sw=2
 set et
 
-
-" set guifont=Monaco:h10
 set guifont=Monaco:h12
+"set guifont=Inconsolata:h14
 set guioptions=egmrLt
 set enc=utf-8
 hi LineNr guifg=#cccccc
+hi LineNr guibg=#272727
 
 au BufRead,BufNewFile *.ctp set filetype=php
-"au BufRead,BufNewFile *.js set autoindent
 
 set nofen
 
@@ -151,3 +157,9 @@ map <leader>b :FuzzyFinderBuffer<CR>
 map <leader>t :Tlist<CR>
 map <leader>w :set lines=101<CR>:set columns=362<CR>
 map <leader>W :set lines=75<CR>:set columns=300<CR>
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.*/
+
+" NERDTree
+let NERDTreeShowBookmarks=1
