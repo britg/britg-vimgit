@@ -147,7 +147,7 @@ set cursorline
 au WinEnter * setlocal cursorline
 au WinLeave * setlocal nocursorline
 
-map <leader>e :execute 'NERDTreeToggle ' . getcwd()<CR>
+map <leader>e :execute 'NERDTreeToggle ' . escape(getcwd(), '\ ')<CR>
 ",V (CAPITAL V) reloads vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
@@ -163,3 +163,8 @@ match OverLength /\%81v.*/
 
 " NERDTree
 let NERDTreeShowBookmarks=1
+
+" Tab settings
+:vnoremap > >gv
+:vnoremap < <gv
+
